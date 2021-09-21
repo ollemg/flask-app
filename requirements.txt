@@ -1,0 +1,6 @@
+flask
+requests
+gunicorn
+flask-sqlalchemy
+flask-admin
+flask-migrate

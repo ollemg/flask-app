@@ -1,0 +1,14 @@
+black
+flake8
+ipdb
+flask
+requests
+gunicorn
+ipython
+isort
+pytest
+pytest-flask
+pytest-cov
+flask-debugtoolbar
+flask-shell-ipython
+flask-sqlalchemy
