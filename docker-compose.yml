@@ -2,11 +2,11 @@ version: '3.3'
 
 services:
 
-  prometheus:
-    image: ollemg/python:3.9-flask
+  flaskapp:
+    image: ollemg/flaskapp
     volumes:
-      - ./app/:/app
+      - /mnt/goat/documentos/github/flask-app/app:/app
     deploy:
       mode: replicated
     ports:
-      - 8080:8080
+      - 8080:8000

@@ -8,7 +8,7 @@ timeout = 5
 
 
 logging.basicConfig(
-    filename = 'app.log',
+    filename = '../../app.log',
     level = logging.DEBUG,
     format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     datefmt = '%m/%d/%Y %I:%M:%S %p'

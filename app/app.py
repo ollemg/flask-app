@@ -1,6 +1,6 @@
 from flask import Flask
-
 from app.ext import config, site, toolbar
+import logging
 
 
 def create_app():

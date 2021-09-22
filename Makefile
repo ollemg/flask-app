@@ -32,3 +32,12 @@ run:
 
 setup:
 	python setup.py install
+
+build:
+	docker build -t ollemg/flaskapp .
+
+docker:
+	docker run -p 8001:8000 ollemg/flaskapp
+
+docker-teste:
+	docker run -ti ollemg/flaskapp /bin/bash

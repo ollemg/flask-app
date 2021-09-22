@@ -1,15 +1,22 @@
 FROM python:3.9
 
-RUN mkdir /app && pip install poetry
-
-COPY pyproject.toml /app/pyproject.toml
+COPY poetry.lock pyproject.toml /
 COPY app/ /app
 
-WORKDIR /app
+WORKDIR /
 
-RUN poetry install
+RUN useradd flask -d /home/flask && \
+    mkdir /home/flask && \
+    chown -R flask:flask /app /home/flask && \
+    chmod 770 /app /home/flask && \
+    pip install poetry && \
+    poetry config virtualenvs.create false && \
+    poetry install
+
+ENV FLASK_ENV=production
+ENV FLASK_RUN=app/app.py
 
 
-EXPOSE 8080
+EXPOSE 8000
 
-# ENTRYPOINT [ "gunicorn", "app:create_app()", "-b", "0.0.0.0" ]
+ENTRYPOINT [ "gunicorn", "app:app", "-b", "0.0.0.0" ]
