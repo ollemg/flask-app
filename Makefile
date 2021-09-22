@@ -28,7 +28,7 @@ format:
 	black -l 79 **/*.py
 
 run:
-	FLASK_APP=moscoder/app.py FLASK_ENV=development flask run
+	FLASK_APP=app/app.py FLASK_ENV=development flask run
 
 setup:
 	python setup.py install
